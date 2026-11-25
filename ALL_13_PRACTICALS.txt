@@ -1,0 +1,845 @@
+==> P01_Terminal_Navigation/README.md <==
+# P1: Project Folder and Terminal Navigation
+
+## Aim
+To create a structured web development project directory and navigate between folders using terminal commands.
+
+## Output
+`sulaksh@Sulakshs-MacBook-Air portfolio % ls -la
+total 0
+drwxr-xr-x  6 sulaksh  staff  192 24 Nov 21:20 .
+drwxr-xr-x  3 sulaksh  staff   96 24 Nov 21:19 ..
+drwxr-xr-x  2 sulaksh  staff   64 24 Nov 21:19 assets
+-rw-r--r--  1 sulaksh  staff    0 24 Nov 21:20 index.html
+-rw-r--r--  1 sulaksh  staff    0 24 Nov 21:20 script.js
+-rw-r--r--  1 sulaksh  staff    0 24 Nov 21:20 style.css
+
+==> P01_Terminal_Navigation/commands.sh <==
+#!/bin/bash
+# P1: Project folder and terminal navigation
+pwd
+mkdir -p web-dev-lab/portfolio/assets
+cd web-dev-lab/portfolio
+touch index.html style.css script.js
+ls -la
+cd ..
+tree || ls -R
+
+==> P01_Terminal_Navigation/web-dev-lab <==
+
+==> P02_Portfolio_Initial_Commit/commands.sh <==
+#!/bin/bash
+# P2: Portfolio repo with an initial commit
+git init
+git status
+git add .
+git commit -m "Initial commit: add portfolio base files"
+git log --oneline
+
+==> P02_Portfolio_Initial_Commit/index.html <==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> sulaksh avinash parode - Portfolio</title>
+</head>
+<body>
+  <h1>Sulaksh Avinash Parode</h1>
+  <p>First-Year B.Tech CSE (AI) Student</p>
+</body>
+</html>
+
+==> P03_Feature_Branch_Workflow/about.html <==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Me</title>
+</head>
+<body>
+  <h2>About Me</h2>
+  <p>I am Sulaksh Avinash Parode, studying Computer Science and AI at Bosscoder School of Technology.</p>
+</body>
+</html>
+
+==> P03_Feature_Branch_Workflow/commands.sh <==
+#!/bin/bash
+# P3: Feature-branch Git workflow
+git branch
+git switch -c feature/about-section
+# Edit about.html
+git add about.html
+git commit -m "Add about section on feature branch"
+git switch main
+git merge feature/about-section
+git log --oneline --graph --all
+
+==> P04_GitHub_README_and_Tags/README.md <==
+# Portfolio Project (v1.0.0)
+
+This repository contains my Web Development Lab assignments and personal portfolio files.
+
+## Features
+- Semantic HTML structure
+- Responsive CSS layouts
+- Git version tagging (`v1.0.0`)
+
+==> P04_GitHub_README_and_Tags/commands.sh <==
+#!/bin/bash
+# P4: GitHub README and version tags
+git add README.md
+git commit -m "Add project README documentation"
+git tag -a v1.0.0 -m "Release version 1.0.0"
+git tag
+git push origin main --tags
+
+==> P05_Semantic_Bio_Page/index.html <==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P5 - Semantic Bio Page</title>
+</head>
+<body>
+  <header>
+    <h1>Sulaksh Avinash Parode</h1>
+    <p>B.Tech CSE (AI) | First Year Student</p>
+  </header>
+
+  <main>
+    <article>
+      <h2>Biography</h2>
+      <p>Hello! I am Sulaksh, currently studying at Bosscoder School of Technology in Bengaluru. I enjoy coding in Java and building clean web pages.</p>
+    </article>
+
+    <section>
+      <h2>Core Subjects</h2>
+      <ul>
+        <li>Programming for Web Development</li>
+        <li>Data Structures &amp; Algorithms</li>
+        <li>Mathematics for Computer Science</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Sulaksh </p>
+  </footer>
+</body>
+</html>
+
+==> P06_Full_Portfolio_Semantic_HTML/index.html <==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P6 - Full Portfolio Semantic Structure</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#">Home</a> |
+      <a href="#">About</a> |
+      <a href="#">Education</a> |
+      <a href="#">Projects</a> |
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h1>Hi, I'm Sulaksh Avinash Parode</h1>
+      <p>Welcome to my semantic HTML portfolio page.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>First-year engineering student focused on full-stack web development and problem solving.</p>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <article>
+        <h3>Bosscoder School of Technology</h3>
+        <p>B.Tech in Computer Science &amp; AI (2026–2030)</p>
+      </article>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <article>
+        <h3>Personal Portfolio</h3>
+        <p>Built using semantic HTML5 tags.</p>
+      </article>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <form>
+        <label for="cname">Name:</label>
+        <input type="text" id="cname" required><br><br>
+        <label for="cemail">Email:</label>
+        <input type="email" id="cemail" required><br><br>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created by Sulaksh Avinash Parode &bull; 2026</p>
+  </footer>
+</body>
+</html>
+
+==> P07_Design_Tokens_Typography/index.html <==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>P7 - Design Tokens & Typography</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <span class="badge">Design System</span>
+    <h1>Typography &amp; Color Tokens</h1>
+    <p class="lead">Using CSS custom properties makes styling consistent and easy to maintain across pages.</p>
+    <p>This paragraph uses our base body font size, line height, and muted neutral text token.</p>
+    <button class="btn-token">Primary Token Button</button>
+  </div>
+</body>
+</html>
+
+==> P07_Design_Tokens_Typography/style.css <==
+:root {
+  /* Color Tokens */
+  --color-primary: #1d4ed8;
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-text: #0f172a;
+  --color-muted: #475569;
+
+  /* Typography Tokens */
+  --font-sans: 'Segoe UI', system-ui, sans-serif;
+  --fs-h1: 2.25rem;
+  --fs-lead: 1.15rem;
+  --fs-body: 1rem;
+
+  /* Spacing & Radius Tokens */
+  --space-md: 16px;
+  --space-lg: 28px;
+  --radius-md: 8px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  padding: 40px;
+}
+
+.wrapper {
+  max-width: 650px;
+  margin: auto;
+  background: var(--color-surface);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid #e2e8f0;
+}
+
+.badge {
+  background: #dbeafe;
+  color: var(--color-primary);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  margin: 12px 0;
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+p {
+  color: var(--color-muted);
+  margin-bottom: var(--space-md);
+}
+
+.btn-token {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+==> P08_Sticky_Navbar_Card_Overlay/index.html <==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>P8 - Sticky Navbar & Card Overlay</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="sticky-nav">
+    <strong>Sulaksh's Lab</strong>
+    <div>
+      <a href="#">Projects</a>
+      <a href="#">Notes</a>
+    </div>
+  </nav>
+
+  <main class="content" id="cards">
+    <h2>CSS Positioning: Sticky Header &amp; Absolute Badge Overlay</h2>
+    <div class="overlay-card">
+      <span class="tag-overlay">NEW</span>
+      <div class="card-top">Project Preview</div>
+      <div class="card-info">
+        <h3>Portfolio Card</h3>
+        <p>The "NEW" badge is positioned using <code>position: absolute</code> inside a <code>position: relative</code> card container.</p>
+      </div>
+    </div>
+
+    <div id="notes" class="spacer-box">
+      <p>Scroll down to test the <code>position: sticky</code> navigation bar at the top of the viewport.</p>
+    </div>
+  </main>
+</body>
+</html>
+
+==> P08_Sticky_Navbar_Card_Overlay/style.css <==
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background: #f1f5f9; }
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #0f172a;
+  color: white;
+  padding: 16px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sticky-nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  margin-left: 18px;
+}
+
+.content {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.overlay-card {
+  position: relative;
+  width: 320px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.tag-overlay {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.card-top {
+  height: 140px;
+  background: #2563eb;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.card-info { padding: 18px; }
+
+.spacer-box {
+  margin-top: 40px;
+  height: 750px;
+  background: white;
+  padding: 24px;
+  border-radius: 10px;
+}
+
+==> P09_Responsive_Flexbox_Navbar_Cards/index.html <==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P9 - Responsive Flexbox Navbar & Cards</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="flex-navbar">
+    <div class="brand">SulakshDev</div>
+    <nav class="nav-items">
+      <a href="#">Home</a>
+      <a href="#">Skills</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="flex-grid">
+    <div class="flex-card">
+      <h3>Card 1: HTML5</h3>
+      <p>Semantic tags and accessible page structure.</p>
+    </div>
+    <div class="flex-card">
+      <h3>Card 2: CSS Flexbox</h3>
+      <p>Flexible one-dimensional row and column alignment.</p>
+    </div>
+    <div class="flex-card">
+      <h3>Card 3: Responsive</h3>
+      <p>Adapts smoothly on smaller screen widths using flex-wrap.</p>
+    </div>
+  </section>
+</body>
+</html>
+
+==> P09_Responsive_Flexbox_Navbar_Cards/style.css <==
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background: #f8fafc; }
+
+.flex-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #1e293b;
+  color: white;
+  padding: 16px 28px;
+}
+
+.brand { font-size: 1.3rem; font-weight: bold; }
+
+.nav-items {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav-items a { color: #e2e8f0; text-decoration: none; }
+
+.flex-grid {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.flex-card {
+  flex: 1 1 260px;
+  background: white;
+  padding: 24px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+}
+
+@media (max-width: 600px) {
+  .flex-navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+==> P10_Header_Footer_Advanced_Flexbox/index.html <==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P10 - Header & Footer with Advanced Flexbox</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Sulaksh Avinash Parode</div>
+    <nav class="center-links">
+      <a href="#">Home</a>
+      <a href="#">Work</a>
+      <a href="#">Blog</a>
+    </nav>
+    <div class="header-actions">
+      <button>Download CV</button>
+    </div>
+  </header>
+
+  <main class="main-area">
+    <h1>Advanced Flexbox Header &amp; Multi-Column Footer</h1>
+    <p>Using <code>min-height: 100vh</code> and <code>flex: 1</code> on main keeps the footer pushed to the bottom.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-col">
+      <h4>Sulaksh Avinash Parode</h4>
+      <p>B.Tech CSE (AI) Student, Bengaluru</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>sulaksh.parode@example.com</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+==> P10_Header_Footer_Advanced_Flexbox/style.css <==
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: #0f172a;
+  color: white;
+}
+
+.center-links {
+  display: flex;
+  gap: 24px;
+}
+
+.center-links a { color: #cbd5e1; text-decoration: none; }
+
+.header-actions button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+.main-area {
+  flex: 1;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 32px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-col a { color: #93c5fd; text-decoration: none; }
+
+==> P11_Newspaper_Three_Column_Grid/index.html <==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P11 - Newspaper Three-Column CSS Grid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="paper">
+    <header class="masthead">
+      <h1>THE BENGALURU TECH CHRONICLE</h1>
+      <p>Saturday, November 21, 2026 &bull; Student Edition</p>
+    </header>
+
+    <main class="news-grid">
+      <article class="col">
+        <h2>CSS Grid Transforms Modern Web Layouts</h2>
+        <p>Unlike one-dimensional layout tools, CSS Grid allows developers to control both rows and columns simultaneously with clean, readable rules.</p>
+        <p>Students at Bosscoder School of Technology are applying grid-template-columns to build editorial and dashboard layouts.</p>
+      </article>
+
+      <article class="col featured">
+        <h2>First-Year Students Ship Full Portfolios</h2>
+        <p>Using semantic HTML5, custom CSS tokens, and vanilla JavaScript, students built responsive personal websites complete with dark mode toggles and client-side form validation.</p>
+        <p>All repositories are version-controlled on GitHub with structured commit histories.</p>
+      </article>
+
+      <article class="col">
+        <h2>Git Collaboration in Teams</h2>
+        <p>Working on isolated feature branches prevents merge conflicts on the main branch and encourages peer code reviews through Pull Requests.</p>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
+
+==> P11_Newspaper_Three_Column_Grid/style.css <==
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; background: #f4f1ea; color: #1c1917; padding: 24px; }
+
+.paper {
+  max-width: 1050px;
+  margin: 0 auto;
+  background: #fffdf9;
+  padding: 30px;
+  border: 1px solid #d6d3d1;
+}
+
+.masthead {
+  text-align: center;
+  border-bottom: 3px double #1c1917;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.masthead h1 { font-size: 2.2rem; letter-spacing: 1px; }
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  gap: 24px;
+}
+
+.col {
+  border-right: 1px solid #d6d3d1;
+  padding-right: 20px;
+}
+
+.col:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.col h2 { font-size: 1.3rem; margin-bottom: 12px; }
+.col p { margin-bottom: 12px; line-height: 1.65; text-align: justify; }
+
+@media (max-width: 768px) {
+  .news-grid { grid-template-columns: 1fr; }
+  .col { border-right: none; border-bottom: 1px solid #d6d3d1; padding-bottom: 16px; }
+}
+
+==> P12_Portfolio_Projects_Advanced_Grid/index.html <==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P12 - Portfolio Projects Grid with Advanced CSS Grid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="projects-wrapper">
+    <h1>Featured Portfolio Projects</h1>
+    <div class="adv-grid">
+      <article class="proj-card span-two">
+        <span class="tag">Featured</span>
+        <h2>Personal Portfolio Website</h2>
+        <p>Full responsive portfolio spanning two columns on desktop using <code>grid-column: span 2</code>.</p>
+      </article>
+      <article class="proj-card">
+        <h2>Git Team Workflow</h2>
+        <p>Branching and Pull Request collaboration project.</p>
+      </article>
+      <article class="proj-card">
+        <h2>Java DSA Tracker</h2>
+        <p>Console application tracking daily problem solving.</p>
+      </article>
+      <article class="proj-card">
+        <h2>CSS Grid Gallery</h2>
+        <p>Responsive card layout built with <code>auto-fit</code> and <code>minmax()</code>.</p>
+      </article>
+    </div>
+  </section>
+</body>
+</html>
+
+==> P12_Portfolio_Projects_Advanced_Grid/style.css <==
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background: #0f172a; color: #f8fafc; padding: 40px 20px; }
+
+.projects-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 { margin-bottom: 24px; }
+
+.adv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.proj-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.span-two {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #1d4ed8, #1e293b);
+}
+
+.tag {
+  background: #38bdf8;
+  color: #0f172a;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+@media (max-width: 650px) {
+  .span-two { grid-column: span 1; }
+}
+
+==> P13_Flexbox_vs_Grid_Shared_Layout/index.html <==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P13 - Choosing Between Flexbox and Grid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Flexbox for 1D Navbar -->
+  <header class="topbar">
+    <h2>Dashboard (Grid + Flexbox)</h2>
+    <nav class="top-links">
+      <a href="#">Overview</a>
+      <a href="#">Reports</a>
+      <a href="#">Settings</a>
+    </nav>
+  </header>
+
+  <!-- CSS Grid for 2D Page Layout (Sidebar + Main Content) -->
+  <div class="page-grid">
+    <aside class="sidebar">
+      <h3>Navigation</h3>
+      <ul>
+        <li>Module 1: Git</li>
+        <li>Module 2: HTML/CSS</li>
+        <li>Module 3: Grid</li>
+      </ul>
+    </aside>
+
+    <main class="main-panel">
+      <h3>Why Both Are Used Together</h3>
+      <p><strong>CSS Grid</strong> handles the overall two-dimensional page skeleton (Sidebar + Main Panel + Card Matrix).</p>
+      <p><strong>Flexbox</strong> handles one-dimensional alignment inside components like the top navbar and card action bars.</p>
+
+      <div class="mini-cards">
+        <div class="m-card">Flexbox: 1D Row/Column</div>
+        <div class="m-card">Grid: 2D Rows &amp; Columns</div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+
+==> P13_Flexbox_vs_Grid_Shared_Layout/style.css <==
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background: #f1f5f9; color: #1e293b; }
+
+/* 1D Flexbox Header */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e293b;
+  color: white;
+  padding: 16px 28px;
+}
+
+.top-links {
+  display: flex;
+  gap: 18px;
+}
+
+.top-links a { color: #cbd5e1; text-decoration: none; }
+
+/* 2D CSS Grid Page Skeleton */
+.page-grid {
+  max-width: 1050px;
+  margin: 28px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 24px;
+}
+
+.sidebar, .main-panel {
+  background: white;
+  padding: 22px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+}
+
+.sidebar ul { margin-top: 12px; padding-left: 18px; line-height: 2; }
+.main-panel p { margin: 12px 0; }
+
+.mini-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.m-card {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #1d4ed8;
+}
+
+@media (max-width: 720px) {
+  .page-grid { grid-template-columns: 1fr; }
+}

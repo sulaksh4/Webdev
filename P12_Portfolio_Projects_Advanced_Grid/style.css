@@ -1,0 +1,40 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background: #0f172a; color: #f8fafc; padding: 40px 20px; }
+
+.projects-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 { margin-bottom: 24px; }
+
+.adv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.proj-card {
+  background: #9dc0f8;
+  border: 1px solid #020912;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.span-two {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #1d4ed8, #1e293b);
+}
+
+.tag {
+  background: #38bdf8;
+  color: #0f172a;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+@media (max-width: 650px) {
+  .span-two { grid-column: span 1; }
+}
